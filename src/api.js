@@ -30,9 +30,3 @@ const nextYear = `${currentYear + 1}-${currentMonth + 1}-${currentDay}`;
 const popular_games = `games${api_key}&dates=${lastYear},${currentDate}&ordering=-rating&page_size=10`;
 
 export const popularGamesURL = () => `${base_url}${popular_games}`;
-console.log(popularGamesURL());
-
-// https://api.rawg.io/api/games?key=faed85b8d5414975b6b944c4a801cac2&dates=2019-09-01,2019-09-30&ordering=-rating&page_size=10
-// https://api.rawg.io/api/games?key=faed85b8d5414975b6b944c4a801cac2?dates=2020-11-14,2021-12-14&ordering=-rating&page_size=10
-// https://api.rawg.io/api/games?key=faed85b8d5414975b6b944c4a801cac2?dates=2019-09-01,2019-09-30&ordering=-rating&page_size=10
-// https://api.rawg.io/api/games?key=faed85b8d5414975b6b944c4a801cac2&dates=2019-09-01,2019-09-30&ordering=-rating&page_size=10
