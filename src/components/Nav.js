@@ -34,7 +34,7 @@ const Nav = () => {
         <h1>Ignite</h1>
       </Logo>
 
-      <form className="search">
+      <StyledForm className="search">
         {searched.length ? (
           <button onClick={clearSearched}>CLEAR SEARCH</button>
         ) : (
@@ -45,20 +45,27 @@ const Nav = () => {
         <button onClick={submitSearch} type="submit">
           Search
         </button>
-      </form>
+      </StyledForm>
     </StyledNav>
   );
 };
 
 const StyledNav = styled(motion.nav)`
-  padding: 3rem 5rem;
-  text-align: center;
+  position: sticky;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
+  /* align-items: center; */
+  top: 0;
+  padding: 0.5rem 0rem;
+  /* text-align: center; */
+  background-color: rgb(75, 159, 189);
   input {
     width: 30%;
     font-size: 1.5rem;
     padding: 0.5rem;
     border: none;
-    margin-top: 1rem;
+    margin-top: 0.5rem;
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
     outline: none;
   }
@@ -70,15 +77,29 @@ const StyledNav = styled(motion.nav)`
     background: #027199;
     color: white;
   }
+  h1 {
+    color: white;
+  }
 `;
 const Logo = styled(motion.nav)`
   display: flex;
+  flex: 1;
+  flex-direction: column;
   justify-content: center;
-  padding: 1rem;
+  align-items: center;
+  padding: 0rem;
   cursor: pointer;
   img {
+    flex: 1;
     height: 2rem;
     width: 2rem;
+    filter: invert(96%) sepia(27%) saturate(450033%) hue-rotate(0deg)
+      brightness(80%) contrast(118%);
   }
+`;
+const StyledForm = styled(motion.form)`
+  width: 50%;
+  justify-content: flex-start;
+  flex: 2;
 `;
 export default Nav;

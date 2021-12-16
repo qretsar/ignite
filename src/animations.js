@@ -35,3 +35,10 @@ export const popup = {
     },
   },
 };
+export const lineAnim = {
+  hidden: { width: "0%" },
+  show: {
+    width: "100%",
+    transition: { duration: 2 },
+  },
+};

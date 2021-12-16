@@ -8,7 +8,7 @@ import GameDetail from "../components/GameDetail";
 //STYLING and Animation
 import styled from "styled-components";
 import { motion } from "framer-motion";
-
+import { fadeIn, lineAnim } from "../animations";
 //router
 import { useLocation } from "react-router-dom";
 
@@ -17,7 +17,6 @@ const Home = (params) => {
   //get the current useLocation
   const location = useLocation();
   const pathId = location.pathname.split("/")[2];
-  console.log(pathId);
 
   //FETCH GAMES_ACTION
   const dispatch = useDispatch();
@@ -35,6 +34,7 @@ const Home = (params) => {
       {searched.length ? (
         <div className="searched">
           <h2>Searched Games </h2>
+          <MotionLine />
           <Games>
             {searched.map((game) => (
               <Game
@@ -50,7 +50,8 @@ const Home = (params) => {
       ) : (
         ""
       )}
-      <h2>Upcoming Games </h2>
+      <h2>Upcoming Games</h2>
+      <MotionLine variants={lineAnim} initial="hidden" animate="show" />
       <Games>
         {upcoming.map((game) => (
           <Game
@@ -63,6 +64,7 @@ const Home = (params) => {
         ))}
       </Games>
       <h2>Popular Games</h2>
+      <MotionLine variants={lineAnim} initial="hidden" animate="show" />
       <Games>
         {popular.map((game) => (
           <Game
@@ -75,6 +77,7 @@ const Home = (params) => {
         ))}
       </Games>
       <h2>New Games</h2>
+      <MotionLine variants={lineAnim} initial="hidden" animate="show" />
       <Games>
         {newGames.map((game) => (
           <Game
@@ -93,7 +96,8 @@ const Home = (params) => {
 const GameList = styled(motion.div)`
   padding: 0rem 5rem;
   h2 {
-    padding: 5rem 0rem;
+    padding: 3rem 0rem 1rem 0rem;
+    text-align: center;
   }
 `;
 const Games = styled(motion.div)`
@@ -104,7 +108,13 @@ const Games = styled(motion.div)`
   grid-column-gap: 3rem;
   grid-row-gap: 5rem;
 `;
-
+const MotionLine = styled(motion.div)`
+  width: 100%;
+  height: 1vh;
+  background: #027199a2;
+  margin-bottom: 1rem;
+  border-radius: 1rem;
+`;
 //
 //default export
 export default Home;

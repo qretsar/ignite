@@ -38,7 +38,8 @@ const GlobalStyles = createGlobalStyle`
         color:#696969;
     }
     a{
-        text-decoration: none:
+        text-decoration: none;
+  /* text-decoration-color: red; */
     }
     img{
         display: block;
