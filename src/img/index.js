@@ -1,0 +1,9 @@
+export { default as apple } from "./apple.svg";
+export { default as gamepad } from "./gamepad.svg";
+export { default as logo } from "./logo.svg";
+export { default as nintendo } from "./nintendo.svg";
+export { default as playstation } from "./playstation.svg";
+export { default as steam } from "./steam.svg";
+export { default as xbox } from "./xbox.svg";
+export { default as starEmpty } from "./star-empty.png";
+export { default as starFull } from "./star-full.png";

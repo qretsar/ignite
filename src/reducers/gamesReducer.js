@@ -1,26 +1,31 @@
-import axious from "axious";
-
 const initState = {
   popular: [],
   newGames: [],
-  upcomingGames: [],
+  upcoming: [],
   searched: [],
 };
 const gamesReducer = (state = initState, action) => {
   switch (action.type) {
     case "FETCH_GAMES":
-      return { ...state };
+      return {
+        ...state,
+        popular: action.payload.popular,
+        upcoming: action.payload.upcoming,
+        newGames: action.payload.newGames,
+      };
+    case "FETCH_SEARCHED":
+      return {
+        ...state,
+        searched: action.payload.searched,
+      };
+    case "CLEAR_SEARCHED":
+      return {
+        ...state,
+        searched: [],
+      };
     default:
       return { ...state };
   }
 };
-///ACtion CREATOR object that describes what will happen
-//Redux thunk - enables asynchronous data fetching
-const fetchGames = (userData) => {
-  axio;
-  return {
-    type: "FETCH_GAMES",
-    payload: userData,
-  };
-};
+
 export default gamesReducer;
